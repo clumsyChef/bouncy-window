@@ -21,7 +21,30 @@ start.addEventListener("click", (e) => {
 			cTMultiplier = cTMultiplier * -1;
 		}
 
-		const thisBallPosi = [ball.screenLeft, ball.screenLeft + 100, ball.screenTop, ball.screenTop + 100];
+		const edges = {
+			tL: { l: ball.screenLeft, t: ball.screenTop },
+			tR: { l: ball.screenLeft + 100, t: ball.screenTop },
+			bL: { l: ball.screenLeft, t: ball.screenTop + 100 },
+			bR: { l: ball.screenTop + 100, t: ball.screenLeft + 100 },
+		};
+
+		allWindows.forEach((elem, ind) => {
+			if (ind != thisBallNumber) {
+				const thisEdges = {
+					tL: { l: ball.screenLeft, t: ball.screenTop },
+					tR: { l: ball.screenLeft + 100, t: ball.screenTop },
+					bL: { l: ball.screenLeft, t: ball.screenTop + 100 },
+					bR: { l: ball.screenTop + 100, t: ball.screenLeft + 100 },
+				};
+
+				// for (let i in thisEdges) {
+				// 	let singleEdge = thisEdges[i];
+				// 	if (singleEdge >= edges.tL && singleEdge <= edges.tR && singleEdge >= edges.bL && singleEdge <= edges.bR) {
+				// 		console.log("Touched");
+				// 	}
+				// }
+			}
+		});
 
 		// allWindows.forEach((elem, ind) => {
 		// 	if (ind != thisBallNumber) {
