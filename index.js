@@ -37,6 +37,13 @@ start.addEventListener("click", (e) => {
 					bR: { l: ball.screenTop + 100, t: ball.screenLeft + 100 },
 				};
 
+				for (let i in thisEdges) {
+					let { l, t } = thisEdges[i];
+					if (l >= edges.tL.l && l <= edges.tL.l + 100 && l >= edges.bL.l && l <= edges.bL.l + 100) {
+						console.log("touched");
+					}
+				}
+
 				// for (let i in thisEdges) {
 				// 	let singleEdge = thisEdges[i];
 				// 	if (singleEdge >= edges.tL && singleEdge <= edges.tR && singleEdge >= edges.bL && singleEdge <= edges.bR) {
